@@ -15,8 +15,22 @@ var io = require('socket.io')(http);
 app.use(express.static(__dirname + '/public'));
 
 //on is to listen to event, first argument is name of the event
-io.on('connection', function(){
+//access individual socket
+io.on('connection', function(socket){
 	console.log('User connected via socket.io');
+
+	socket.on('message', function(message){
+		console.log('message recieved: '+message.text);
+		//sends received message to everyone but the sender
+		socket.broadcast.emit('message', message);
+	});
+
+	//socket object, event method. event method takes two arguments
+	//1st event name, 2nd data to send
+	socket.emit('message', {
+		text: 'Welcome to the chat app'
+	});
+
 });
 
 //start server
