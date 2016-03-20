@@ -21,8 +21,11 @@ io.on('connection', function(socket){
 
 	socket.on('message', function(message){
 		console.log('message recieved: '+message.text);
-		//sends received message to everyone but the sender
-		socket.broadcast.emit('message', message);
+		//sends received message to everyone but the sender (current socket)
+		//socket.broadcast.emit('message', message);
+
+		//io.emit to emit message to all socket s
+		io.emit('message', message);
 	});
 
 	//socket object, event method. event method takes two arguments
