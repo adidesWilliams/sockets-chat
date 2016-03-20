@@ -1,5 +1,6 @@
  //PORT variable configured by heroku
  var PORT = process.env.PORT || 3000;
+ var moment = require ('moment');
 
 var express = require ('express');
 //create new express app
@@ -24,6 +25,7 @@ io.on('connection', function(socket){
 		//sends received message to everyone but the sender (current socket)
 		//socket.broadcast.emit('message', message);
 
+		message.timestamp = moment().valueOf();	
 		//io.emit to emit message to all socket s
 		io.emit('message', message);
 	});
@@ -31,7 +33,10 @@ io.on('connection', function(socket){
 	//socket object, event method. event method takes two arguments
 	//1st event name, 2nd data to send
 	socket.emit('message', {
-		text: 'Welcome to the chat app'
+		name: 'System',
+		text: 'Welcome to the chat app',
+		//javascript timestamp using valueOf(). returns number, not string
+		timestamp: moment().valueOf()
 	});
 
 });
