@@ -13,3 +13,18 @@ socket.on('message', function(message){
 	console.log(message.text);
 
 });
+
+//form to submit whatever user input is received
+	$('#message-form').on("submit", function(event){
+		event.preventDefault();
+
+		var $message = $('input[name=message');
+
+		//message gets sent with socket.emit
+		socket.emit('message', {
+			text: $message.val()
+		});
+
+		$message.val('');	
+
+});
