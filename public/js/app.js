@@ -25,7 +25,7 @@ socket.on('message', function(message){
 	console.log('New Message');
 	console.log(message.text);
 	//$('.messages').append('<p><strong>'+ momentTimestamp.local().format('MMM Do YYYY, hh:mm a')+': </strong>'+message.text+'</p>');
-	$('.messages').append('<p><strong>' +message.name+' '+ momentTimestamp.local().format('hh:mm a') + '</strong></p>');
+	$('.messages').append('<p><strong>' +message.name+' '+ momentTimestamp.local().format('hh:mm:ss a') + '</strong></p>');
 	$('.messages').append('<p>'+message.text+'</p>');
 
 });
