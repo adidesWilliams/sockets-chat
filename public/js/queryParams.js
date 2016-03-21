@@ -13,7 +13,7 @@ function getQueryVariable(variable){
 		if (decodeURIComponent(pair[0]) == variable){
 		
 			//if 1st element in pair is equal to variable, return its pair
-			return decodeURIComponent(pair[1]);
+			return decodeURIComponent(pair[1].replace(/\+/g, ' '));
 			
 		}
 	}

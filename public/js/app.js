@@ -2,9 +2,18 @@ var name = getQueryVariable('name') ||'Anonymous';
 var room = getQueryVariable('room');
 var socket = io();
 
+
+$('.room-title').text(room);
+
+
 socket.on('connect', function(){
 
 	console.log('connected to socket.io server');
+	//after user connects, they emit a custom event to the server request a specific room to join
+	socket.emit('joinRoom', {
+		name: name,
+		room: room
+	});
 });
 
 //1st argument pass in custom event
