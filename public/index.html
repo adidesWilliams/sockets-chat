@@ -1,23 +1,79 @@
 <!doctype html>
-
 <html>
-	<head>
-		<meta charset="UTF-8">		
-		<title>Socket io chat</title>
 
-	</head>
-		<body>
-		<h1>JOIN CHAT</h1>
-		<form action="/chat.html">
-			<label>Display Name:</label>
-			<input type="text" name="name"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat (socket io powered)</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <Link rel="stylesheet" href="./css/styles.css">
+</head>
 
-			<label>Room Name:</label>
-			<input type="text" name="room"/>
+<body onload='return randomColor()'>
+    
+    <div class="vertical-center" id="outer">
+	    <div class="container" >
+	        <div class="row">
+	            <div class="col-md-4 col-md-offset-4 well" id="inner">
+	            <h1 class="text-center">Chat App</h1>
+	            
+	                <form action="/chat.html">
+	                    <div class="form-group">
+	                        <label>User Name:</label>
+	                        <div class="input-group">
+	                        	<span class="input-group-addon">
+	                        		<i class="glyphicon glyphicon-user"></i>
+	                        	</span>
+	                        	<input type="text" name="name" class="form-control" />
+	                        </div>
+	                        
+	                    </div>
+	                    <div class="form-group">
+	                        <label>Room Name:</label>
 
-			<input type="submit" value="Join Chat"/>
-		</form>
+	                        <div class=input-group>
+
+	                        <span class="input-group-addon">
+	                        <i class="glyphicon glyphicon-comment"></i>
+	                        	
+	                        </span>
+
+	                        	 <input type="text" name="room" class="form-control" />
+
+	                        </div>
+
+	                       
+	                    </div>
+	                    <div class="form-group">
+	                        <input type="submit" value="Join the Conversation" class="btn btn-primary btn-block" />
+	                    </div>
+	                </form>
+	                <h6 class="text-center">(*powered by socket io*)</h6>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+
+<script type="text/javascript">
+	
+
+	function randomColor() {
+	var hashBody = '#';
+	var hexBody = ['d3d3d3', 'bdbdbd', 'a8a8a8', '696969', '3f3f3f', '2a2a2a'];
+	hashWell = '#';
+	var hexWell = ['1a8cff', '66b3ff', '80bfff', '80ffaa', 'ff9933', 'ff4d4d', '884ff4d'];
+	hashBody += hexBody[Math.floor(Math.random()*hexBody.length)];
+	document.getElementById('outer').style.background = hashBody;
+	hashWell += hexWell[Math.floor(Math.random()*hexWell.length)];
+	document.getElementById('inner').style.background = hashWell;
+
+}
+/*randomColor();
+setInterval(randomColor, 1000);
+*/
 
 
-		</body>
+</script>
+
+</body>
+
 </html>

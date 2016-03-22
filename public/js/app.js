@@ -21,12 +21,15 @@ socket.on('connect', function(){
 //listen for custom event emitted from server
 socket.on('message', function(message){
 	var momentTimestamp = moment.utc(message.timestamp);
+
+
 	
 	console.log('New Message');
 	console.log(message.text);
 	//$('.messages').append('<p><strong>'+ momentTimestamp.local().format('MMM Do YYYY, hh:mm a')+': </strong>'+message.text+'</p>');
-	$('.messages').append('<p><strong>' +message.name+' '+ momentTimestamp.local().format('hh:mm:ss a') + '</strong></p>');
-	$('.messages').append('<p>'+message.text+'</p>');
+	$('#chatList').append('<p><strong>' +message.name+' '+ momentTimestamp.local().format('hh:mm:ss a') + '</strong></p>');
+	$('#chatList').append('<p>'+message.text+'</p>');
+	//$('.messages').append('#chatList');
 
 });
 
