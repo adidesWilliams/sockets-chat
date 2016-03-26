@@ -3,9 +3,12 @@
 Node JS
 Chat App
 
-# Screenshots
+# Login
 
-![Alt text](/screenshots/login1.png?raw=true "Login Screen")
+![Alt text](/screenshots/login1.png?raw=true "Login Screen - Person1")
+![Alt text](/screenshots/login2.png?raw=true "Login Screen - Person2")
 
-![Alt text](/screenshots/chat1.png?raw=true "Chat Screen")
+#Conversation
+![Alt text](/screenshots/chat1.png?raw=true "Chat Screen - Person1")
+![Alt text](/screenshots/chat2.png?raw=true "Chat Screen - Person2")
 
