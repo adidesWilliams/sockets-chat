@@ -5,5 +5,7 @@ Chat App
 
 # Screenshots
 
-![Alt text](/screenshots/chat1.png?raw=true)
+![Alt text](/screenshots/login1.png?raw=true "Login Screen")
+
+![Alt text](/screenshots/chat1.png?raw=true "Chat Screen")
 
